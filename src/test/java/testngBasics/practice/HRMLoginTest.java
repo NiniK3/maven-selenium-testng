@@ -16,7 +16,6 @@ public class HRMLoginTest {
     * e.g. setup the driver and land on a page
     * TestNG provides us Annotations that can make that happen
     * @BeforeMethod and @AfterMethod will make sure that those are run before and after each test (a method that is marked with @test annotation) in given class
-    *
     * */
 
     @BeforeMethod

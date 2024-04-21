@@ -12,12 +12,14 @@ import org.testng.annotations.Test;
 
 import java.util.List;
 
-//Scenario: User should be able to add Job Title
-//Given User is on homepage
-//When User clicks on Admin→ Job → Job Titles
-//Then User can see Add and Delete buttons are displayed
-//When User can add a new Job Title
-//Then newly Added Job Information is displayed in Table
+/*
+Scenario: User should be able to add Job Title
+Given User is on homepage
+When User clicks on Admin→ Job → Job Titles
+Then User can see Add and Delete buttons are displayed
+When User can add a new Job Title
+Then newly Added Job Information is displayed in Table
+*/
 
 
 public class OrangeHrmJobTitleTest {
@@ -36,25 +38,20 @@ public class OrangeHrmJobTitleTest {
         driver.quit();
     }
 
-
     @Test
     public void testUserCanAddJobTitle() throws InterruptedException {
 
         /* Login */
         login("yoll-student", "Bootcamp5#");
-
         // User clicks on Admin → Job → Job Titles
         WebElement adminTab = driver.findElement(By.id("menu_admin_viewAdminModule"));
         adminTab.click();
-
         WebElement jobTab = driver.findElement(By.id("menu_admin_Job"));
         jobTab.click();
-
         WebElement jobTitlesTab = driver.findElement(By.id("menu_admin_viewJobTitleList"));
         jobTitlesTab.click();
         // after this click we will be navigated to a different page
         Thread.sleep(2000);
-
         // Then User can see Add and Delete buttons are displayed
         WebElement addButton = driver.findElement(By.id("btnAdd"));
         WebElement deleteButton = driver.findElement(By.id("btnDelete"));
