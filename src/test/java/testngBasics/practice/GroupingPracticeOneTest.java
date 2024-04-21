@@ -9,12 +9,12 @@ public class GroupingPracticeOneTest {
         System.out.println("Test case One running..");
     }
 
-    @Test(groups = {"regression"})
+    @Test(groups = {"regression", "smoke"})
     public void test_case_two(){
         System.out.println("Test case Two running..");
     }
 
-    @Test(groups = {"regression"})
+    @Test(groups = {"regression", "smoke"})
     public void test_case_three(){
         System.out.println("Test case Three running..");
     }

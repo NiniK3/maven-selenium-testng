@@ -58,17 +58,12 @@ public class HRMLoginTest {
     * - remove the test (not recommended)
     * - we can add properties/parameters to the Test annotation itself
     * */
-    @Test(
-            enabled = true,
-            description = "This test is WIP and has to be disabled",
-            priority = 1
-    )
-    public void testLoginWithInvalidCredentials(){
-        login("invalid", "invalid");
+    @Test(dataProviderClass = TestData.class, dataProvider = "invalidLoginCredentialsDataSet")
+    public void testLoginWithInvalidCredentials(String username, String password, String expectedErrorMessage){
+        login(username, password);
         /* Locate the error message and verify it is as expected */
         WebElement errorMessageElement = driver.findElement(By.id("spanMessage"));
         String actualErrorMessage = errorMessageElement.getText();
-        String expectedErrorMessage = "Invalid credentials";
         /* Assert */
         Assert.assertEquals(actualErrorMessage, expectedErrorMessage, "Error message verification failed!");
     }
