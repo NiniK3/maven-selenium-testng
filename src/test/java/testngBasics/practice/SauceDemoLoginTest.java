@@ -43,7 +43,7 @@ public class SauceDemoLoginTest {
         return data;
     }
 
-    @Test(dataProvider = "loginCredentials")
+    @Test(groups = "regression", dataProvider = "loginCredentials")
     public void testLoginWithValidCredentials(String username, String password) throws InterruptedException {
         /*Locate the elements*/
         WebElement usernameInputBox = driver.findElement(By.id("user-name"));

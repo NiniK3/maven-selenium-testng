@@ -14,7 +14,7 @@ public class OrangeHrmTest {
 //    Verify logo is displayed with assertTrue() method
 //    Run your code with @Test annotation
 
-    @Test
+    @Test(groups = "regression")
     public void verifyLogoIsDisplayed(){
         WebDriver driver = new ChromeDriver();
         driver.get("http://dev-hrm.yoll.io/index.php/auth/login");
@@ -30,7 +30,7 @@ public class OrangeHrmTest {
 //    Navigate to OrangeHRM
 //    Get the Form Header
 //    Fail the test if it is not equal to: LOGIN Panel
-    @Test
+    @Test(groups = "regression")
     public void verifyPageTitle(){
         WebDriver driver = new ChromeDriver();
         driver.get("http://dev-hrm.yoll.io/index.php/auth/login");

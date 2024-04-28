@@ -7,6 +7,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.*;
 
+
 public class HRMLoginTest {
 
     WebDriver driver;
@@ -41,9 +42,10 @@ public class HRMLoginTest {
     }
 
 
-    @Test(priority = 0)
-    public void testSuccessfulLoginDisplaysUsername(){
-        login("yoll-student", "Bootcamp5#");
+    @Parameters({"username", "password"})
+    @Test(priority = 0, groups = "regression")
+    public void testSuccessfulLoginDisplaysUsername(@Optional("yoll-student") String username, @Optional("Bootcamp5#") String password){
+        login(username, password);
         /* Locate and verify the welcome message */
         WebElement welcomeMessageElement = driver.findElement(By.id("welcome"));
         String actualWelcomeMessage = welcomeMessageElement.getText();
@@ -58,7 +60,7 @@ public class HRMLoginTest {
     * - remove the test (not recommended)
     * - we can add properties/parameters to the Test annotation itself
     * */
-    @Test(dataProviderClass = TestData.class, dataProvider = "invalidLoginCredentialsDataSet")
+    @Test(groups = "regression", dataProviderClass = TestData.class, dataProvider = "invalidLoginCredentialsDataSet")
     public void testLoginWithInvalidCredentials(String username, String password, String expectedErrorMessage){
         login(username, password);
         /* Locate the error message and verify it is as expected */
@@ -68,7 +70,7 @@ public class HRMLoginTest {
         Assert.assertEquals(actualErrorMessage, expectedErrorMessage, "Error message verification failed!");
     }
 
-    @Test(priority = 3)
+    @Test(priority = 3, groups = "regression")
     public void testUserCanLogOut() throws InterruptedException {
         login("yoll-student", "Bootcamp5#");
         /*

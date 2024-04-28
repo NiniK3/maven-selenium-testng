@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<!--to provide parameters for test cases we want to create a tag parameters in xml-->
+<!--parameters in xml can be defined at different levels: suite, test, classes, class levels-->
+<!--each parameter has to have name and the value-->
+<suite name="Parameters Practice Suite">
+
+    <parameter name="parameterOne" value="This is the value from xml!"/>
+    <parameter name="parameterTwo" value="xml is really fun!"/>
+
+    <test name="Parameters Practice Test">
+
+        <parameter name="username" value="omarramo123"/>
+        <parameter name="password" value="qwerty"/>
+
+        <classes>
+            <class name="testngBasics.practice.ParametersPracticeTest"/>
+        </classes>
+    </test>
+
+</suite>

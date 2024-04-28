@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<suite name="Run Login Suite">
+    <test name="Run Login Test">
+
+        <parameter name="username" value="yoll-student"/>
+        <parameter name="password" value="Bootcamp5#"/>
+
+        <classes>
+            <class name="testngBasics.practice.HRMLoginTest"/>
+        </classes>
+    </test>
+</suite>

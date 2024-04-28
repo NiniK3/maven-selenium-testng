@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<!--We can run on parallel:-->
+<!--Tests-->
+<!--Classes -->
+<!--Methods-->
+
+<!--To make testNg execute the tests on parallel we need to define parallel attribute in suite tag, also the thred count we want to use-->
+<suite name="regression suite" parallel="classes" thread-count="10">
+    <test name="Chrome Regression">
+        <classes>
+            <class name="testngBasics.practice.HRMLoginTest"/>
+            <class name="testngBasics.practice.SauceDemoLoginTest"/>
+            <class name="testngBasics.practice.OrangeHrmTest"/>
+            <class name="testngBasics.practice.OrangeHrmJobTitleTest"/>
+        </classes>
+    </test>
+</suite>

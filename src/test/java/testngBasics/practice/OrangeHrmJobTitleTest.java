@@ -38,7 +38,7 @@ public class OrangeHrmJobTitleTest {
         driver.quit();
     }
 
-    @Test
+    @Test(groups = "regression")
     public void testUserCanAddJobTitle() throws InterruptedException {
 
         /* Login */

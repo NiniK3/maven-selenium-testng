@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<!--Cross Browser Testing is the technic or running your tests(testing the application) in different browsers -->
+
+<suite name="Cross Browser Regression" parallel="tests" thread-count="10">
+<!--    test 1-->
+    <test name="Chrome">
+        <parameter name="browserType" value="chrome"/>
+        <classes>
+            <class name="testngBasics.practice.BrowserTypeResolverTest"/>
+        </classes>
+    </test>
+<!--test 2-->
+    <test name="Firefox">
+        <parameter name="browserType" value="firefox"/>
+        <classes>
+            <class name="testngBasics.practice.BrowserTypeResolverTest"/>
+        </classes>
+    </test>
+<!--test 3-->
+    <test name="Safari">
+        <parameter name="browserType" value="safari"/>
+        <classes>
+            <class name="testngBasics.practice.BrowserTypeResolverTest"/>
+        </classes>
+    </test>
+
+</suite>
