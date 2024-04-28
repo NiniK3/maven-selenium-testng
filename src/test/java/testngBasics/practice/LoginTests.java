@@ -13,7 +13,6 @@ import testngBasics.pages.LoginPage;
 
 public class LoginTests {
 
-    private static final Logger log = LoggerFactory.getLogger(LoginTests.class);
     private WebDriver driver;
 
     @BeforeMethod
