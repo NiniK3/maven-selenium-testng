@@ -5,10 +5,8 @@
     <test name="Smoke Test">
 <!--        define group-->
         <groups>
-            <define name="smoke"/>
             <run>
                 <include name="smoke"/>
-                <include name="regression"/>
             </run>
         </groups>
 <!--        Source-->
